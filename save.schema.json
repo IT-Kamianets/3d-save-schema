@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://3d.itkamianets.com/schemas/save.schema.json",
+  "title": "3D Save",
+  "description": "The envelope around one game save slot. The payload is owned and versioned by the game; this schema does not describe it.",
+  "type": "object",
+  "required": ["schemaVersion", "gameId", "slotId", "savedAt", "payloadVersion", "payload"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": 1, "description": "Version of this envelope." },
+    "gameId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$", "description": "Stable id of the game, for example hippodrome." },
+    "slotId": { "type": "string", "minLength": 1, "description": "Save slot name, for example default." },
+    "savedAt": { "type": "string", "format": "date-time", "description": "UTC time of writing." },
+    "payloadVersion": { "type": "integer", "minimum": 1, "description": "Version of the game's own payload." },
+    "payload": { "type": "object", "description": "Game-owned data. Opaque to the engine." }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "gameId": "hippodrome",
+  "slotId": "default",
+  "savedAt": "2026-10-29T12:00:00Z",
+  "payloadVersion": 1,
+  "payload": { "bestLapSeconds": 21.4, "bestTotalSeconds": 66.9, "wins": 2, "races": 5 }
+}
